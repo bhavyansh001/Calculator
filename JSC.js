@@ -1,20 +1,63 @@
-let string = "";
-let items = document.querySelectorAll('.numericitems, .operationitems');
-items.forEach((numericitems)=>{
-    numericitems.addEventListener('click', (event)=>{
-        if(event.target.innerHTML == "="){
-            string = eval(string)
-            document.querySelector('#display').value = string;
-        }
-        else if(event.target.innerHTML == "Clear"){
-            string = "";
-            document.querySelector('#display').value = string;
-        }
-        else{
-        console.log(event.target)
-        string = string + event.target.innerHTML;
-        document.querySelector('#display').value = string;
-        }
+console.log('Welcome to Calculator!');
+
+let displayValue = document.getElementById('display');
+{  //Numbers
+    document.getElementById('num0').addEventListener('click', function(){
+        displayValue.value += document.getElementById('num0').innerText;
     })
+document.getElementById('num1').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num1').innerText;
+})
+document.getElementById('num2').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num2').innerText;
+})
+document.getElementById('num3').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num3').innerText;
+})
+document.getElementById('num4').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num4').innerText;
+})
+document.getElementById('num5').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num5').innerText;
+})
+document.getElementById('num6').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num6').innerText;
+})
+document.getElementById('num7').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num7').innerText;
+})
+document.getElementById('num8').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num8').innerText;
+})
+document.getElementById('num9').addEventListener('click', function(){
+    displayValue.value += document.getElementById('num9').innerText;
+})
+}
+
+{  //Operators
+document.getElementById('num.').addEventListener('click', function(){
+displayValue.value += document.getElementById('num.').innerText;
+})
+document.getElementById('opr+').addEventListener('click', function(){
+displayValue.value += document.getElementById('opr+').innerText;
+})
+document.getElementById('opr-').addEventListener('click', function(){
+displayValue.value += document.getElementById('opr-').innerText;
+})
+document.getElementById('oprx').addEventListener('click', function(){
+displayValue.value += '*';
+})
+document.getElementById('opr/').addEventListener('click', function(){
+displayValue.value += '/';
+})
+}
+
+//Clear
+document.getElementById('clear').addEventListener('click', function(){
+displayValue.value = '';
 })
 
+//EqualTo
+document.getElementById('equalTo').addEventListener('click', function(){
+displayValue.value = eval(displayValue.value);
+})
