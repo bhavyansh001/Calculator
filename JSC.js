@@ -3,7 +3,7 @@ console.log('Welcome to Calculator!');
 let displayValue = document.getElementById('display');
 {  //Numbers
 document.getElementById('num0').addEventListener('click', function(){
-displayValue.value += document.getElementById('num0').innerText;
+    displayValue.value += document.getElementById('num0').innerText;
 })
 document.getElementById('num1').addEventListener('click', function(){
     displayValue.value += document.getElementById('num1').innerText;
