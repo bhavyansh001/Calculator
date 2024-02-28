@@ -59,7 +59,26 @@ document.getElementById("clear").addEventListener("click", function () {
   displayValue.value = "";
 });
 
-//EqualTo
+// Clear screen on backspace
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Backspace") {
+    displayValue.value = "";
+  }
+});
+
+// Add separate listener for Enter key on the document
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    document.getElementById("equalTo").click();
+  }
+});
+
+// EqualTo
 document.getElementById("equalTo").addEventListener("click", function () {
-  displayValue.value = eval(displayValue.value);
+  try {
+    let result = eval(displayValue.value);
+    displayValue.value = result;
+  } catch (error) {
+    displayValue.value = "Error: Invalid expression";
+  }
 })
